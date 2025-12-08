@@ -1,9 +1,8 @@
-let people = [];        
-let expenses = [];      
-
+let people = [];
+let expenses = [];
 
 document.getElementById("enter").addEventListener("click", function () {
-    let input = document.querySelector("#names input");
+    let input = document.getElementById("person-name");
     let name = input.value.trim();
 
     if (name === "") {
@@ -11,7 +10,6 @@ document.getElementById("enter").addEventListener("click", function () {
         return;
     }
 
-    
     people.push(name);
     input.value = "";
 
@@ -19,9 +17,8 @@ document.getElementById("enter").addEventListener("click", function () {
     updateCheckboxes();
 });
 
-
 function updatePeopleList() {
-    let ul = document.getElementById("list of people");
+    let ul = document.getElementById("list-of-people");
     ul.innerHTML = "";
 
     people.forEach((person) => {
@@ -49,20 +46,17 @@ function updateCheckboxes() {
     });
 }
 
-
 document.getElementById("add-expense-btn").addEventListener("click", function () {
-    let expName = document.getElementById("expense name").value.trim();
-    let amount = Number(document.getElementById("total amount").value);
+    let expName = document.getElementById("expense-name").value.trim();
+    let amount = Number(document.getElementById("total-amount").value);
 
     if (expName === "" || amount <= 0) {
         alert("Enter valid expense details");
         return;
     }
 
-
     let selectedPeople = [];
-    document
-        .querySelectorAll("#checkboxes input:checked")
+    document.querySelectorAll("#checkboxes input:checked")
         .forEach((checkbox) => selectedPeople.push(checkbox.value));
 
     if (selectedPeople.length === 0) {
@@ -77,15 +71,11 @@ document.getElementById("add-expense-btn").addEventListener("click", function ()
         splitAmount: amount / selectedPeople.length
     });
 
-    document.getElementById("expense name").value = "";
-    document.getElementById("total amount").value = "";
+    document.getElementById("expense-name").value = "";
+    document.getElementById("total-amount").value = "";
 
     showSummary();
 });
-
-
-
-
 
 function showSummary() {
     let summaryDiv = document.getElementById("summary-output");
@@ -98,10 +88,8 @@ function showSummary() {
 
     let totalByPerson = {};
 
-    
     people.forEach((p) => (totalByPerson[p] = 0));
 
-    
     expenses.forEach((exp) => {
         exp.people.forEach((p) => {
             totalByPerson[p] += exp.splitAmount;
