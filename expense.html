@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><link rel="stylesheet" href="expense.css">
-
+    <title>Expense Splitter</title>
+    <link rel="stylesheet" href="expense.css">
 </head>
+
 <body>
-    <div><h1>EXPENSE SPLITTER</h1></div>
-<h2>Enter the names of the people</h2>
-<div id="names"><input type="text" placeholder="enter the name of the person"><br><button id="enter">ENTER</button><br><ul id="list of people"></ul></div>
 
-<section id="expenses">
-    <h2>Add Expense</h2>
+    <h1>EXPENSE SPLITTER</h1>
 
-    <input type="text" id="expense name" placeholder="Expense name (e.g., Pizza)" />
+    <section id="names">
+        <h2>Enter the names of the people</h2>
 
-    <input type="number" id="total amount" placeholder="Amount (e.g., 600)" />
+        <input type="text" id="person-name" placeholder="Enter the name of the person">
 
-    <h3>Select people involved:</h3>
+        <button id="enter">ENTER</button>
 
-    
-    <div id="checkboxes"></div>
+        <ul id="list-of-people"></ul>
+    </section>
 
-    <button id="add-expense-btn">Add Expense</button>
-</section>
+    <section id="expenses">
+        <h2>Add Expense</h2>
 
+        <input type="text" id="expense-name" placeholder="Expense name (e.g., Pizza)" />
 
-<section id="results-section">
-    <h2>Summary</h2>
-    <div id="summary-output"></div>
-</section>
+        <input type="number" id="total-amount" placeholder="Amount (e.g., 600)" />
 
-<script src="script.js"></script>
+        <h3>Select people involved:</h3>
+        <div id="checkboxes"></div>
 
+        <button id="add-expense-btn">Add Expense</button>
+    </section>
 
-    
+    <section id="results-section">
+        <h2>Summary</h2>
+        <div id="summary-output"></div>
+    </section>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
-
-
-
-
